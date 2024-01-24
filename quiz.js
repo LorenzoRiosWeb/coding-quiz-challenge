@@ -23,11 +23,12 @@ startBtn.addEventListener("click", function(){
     quizContainer.style.display = "block";
     homeContainer.style.display = "none";
     countdownTimer.style.display = "block";
-    document.getElementById("")
-})
-
-
-
+    document.getElementById("score_keeper").style.display = "block";
+    document.getElementById("score").innerHTML = score;
+    setCountdownTimer();
+    setQuizQuestions();
+    time_start = true;
+});
 
 // Create function for countdown timer
 
