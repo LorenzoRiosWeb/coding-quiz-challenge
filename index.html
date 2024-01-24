@@ -9,14 +9,62 @@
 <body>
     <header>
         <!-- make display for high scores -->
-        <section id = "score">
+        <section id = "score" style="display: none;">
             <input type="button" value="View High Scores" >
+            Score: <var id="score"></var>
         </section>
         <!-- make display for time -->
-        <section>
-            <p id="countdownTimer"> Time: 0</p>
+        <section id="countdownTimer" style="display: none;">
+            Time Remaining: <span id="timer"></span>
         </section>
     </header>
+    <!-- container for home page -->
+    <container>
+        <div id="homeContainer"></div>
+            <h1>Welcome to Code Quiz</h1>
+            <p>Try answering the folowing code-related questions within the time limit. You will hvae 75 seconds to complete this quiz</p>
+            <p>You will be penalized by 10 seconds each answer you get incorrect</p><br>
+            <button id="startbtn">Start!</button>
+    </container>
+    <!-- container for the quiz -->
+    <container>
+        <div id="quizContainer" style="display: none;">
+            <h2 id="questionHeading"></h2>
+            <!--answer choices for quiz  -->
+            <ul>
+                <div id="choices">
+                    <button id="answerA"></button>
+                </div>
+                <div>
+                    <button id="answerB"></button>
+                </div>
+                <div>
+                    <button id="answerC"></button>
+                </div>
+                <div>
+                    <button id="answerD"></button>
+                </div>
+            </ul>
+        </div>
+    </container> 
+    <section id="AnswerResponse">
+    </section>
+    <div id="game_over" style="display: none;">
+    <h2>Game Over 😔</h2>
+    Your Score was <var id="end_score"></var>
+    <br>
+    Initials: <input type="text" name="" id="initials">
+    <br>
+    <input type="button" value="submit" id="submit_initials">
+    </div>
+    <div id="high_scores_page" style="display: none;">
+        <h2>high Scores</h2>
+        <div id="high_scores"></div>
+            <input type="button" value="Go Back" id="go_back">
+            <input type="button" id="Clear Highscores" value="clear">
+    </div>
+
     <script src="quiz.js"></script>
 </body>
+
 </html>

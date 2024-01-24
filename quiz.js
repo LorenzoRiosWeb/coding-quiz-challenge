@@ -10,6 +10,7 @@ var countdownTimer = document.getElementById("countdownTimer");
 
 
 
+// Create function for countdown timer
 
 
 // create function for answers var
