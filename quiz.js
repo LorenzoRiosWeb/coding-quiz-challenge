@@ -30,8 +30,19 @@ startBtn.addEventListener("click", function(){
     time_start = true;
 });
 
-// Create function for countdown timer
+// Created var for countdown timer
+var countdownTimerInterval = setInterval(setCountdownTimer, 1000);
 
+// create a function that changes the time var
+function setCountdownTimer(){
+    if (time_start)
+    time --;
+    if(time<=0){
+        end_quiz();
+        time = 0
+    }
+    document.getElementById("timer").innerHTML = time;
+}
 
 // create function for answers var
 
