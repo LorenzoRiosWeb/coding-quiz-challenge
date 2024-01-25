@@ -19,7 +19,7 @@ var score = 0;
 
 let i = 0;
 // create function for startBtn
-startBtn.addEventListener("click", function(){
+startBtn.addEventListener("click", function() {
     quizContainer.style.display = "block";
     homeContainer.style.display = "none";
     countdownTimer.style.display = "block";
@@ -34,7 +34,7 @@ startBtn.addEventListener("click", function(){
 var countdownTimerInterval = setInterval(setCountdownTimer, 1000);
 
 // create a function that changes the time var
-function setCountdownTimer(){
+function setCountdownTimer() {
     if (time_start)
     time --;
     if(time<=0){
@@ -199,7 +199,27 @@ answerD.addEventListener('click', function(event){
 });
 
 //when time reaches 0 screen shows game over
+    function end_quiz(){
+        document.getElementById("game_over").style.display= "block";
+        document.getElementById("quizContainer").style.display="none";
+        document.getElementById("countdownTimer").style.display= "none";
+        document.getElementById("score_keeper").style.display= "none";
+        document.getElementById("AnswerResponse").innerHTml="";
+        document.getElementById("end_score").innerHTMl= score;
+    }
+
+    // final score and initials
+    function submit_score() {
+        high_scores.push(document.getElementById(" ").value + " " + score);
+        view_high_scores();
+    }
+
+    localStorage.setItem("score", JSON.stringify(AnswerResponse));
+    localStorage.setItem("initials", JSON.stringify(initials));
+
     
+
+
 
 
 
