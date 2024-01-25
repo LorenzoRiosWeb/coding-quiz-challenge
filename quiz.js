@@ -11,7 +11,7 @@ var answerA = document.getElementById("answerA");
 var answerB = document.getElementById("answerB");
 var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
-var answerResponse = document.getElementById("AnswerResponse");
+var correctAnswer = document.getElementById("correctAnswer");
 var high_scores =[];
 var output="";
 // set a score of =0 at start of game
@@ -68,23 +68,138 @@ var questionArray = [{
 }
 ]
 
-
-
-
-
-
-
 //create function for inccorect answer time is subtracted
-
-
-
-
-
-
-
+answerA.addEventListener('click', function(event){
+    event.stopPropagation();
+    correctAnswer = questionsArrau[i].correctAnswer;
+    console.log("correctAnswer " + correctAnswer);
+    //make if statement to check if answer is wrong or right
+    if(0 === correctAnswer){
+        document.getElementById("AnswerResponse").innerHTML = "Correct! Good Job 😊";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+        // when answer is correct will increase users scores
+        score++;
+        document.getElementById("score").innerHTML = score;
+    } else {
+        time_remaining -=5;
+        // when user choose wrong answer minus 5 seconds
+        document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck next time!";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+    }
+    if (i >= questionArray.length -1){
+    end_quiz();
+    }else{
+        i++
+        setQuizQuestions();
+    }
+});
+answerB.addEventListener('click', function(event){
+    event.stopPropagation();
+    correctAnswer = questionsArrau[i].correctAnswer;
+    console.log("correctAnswer " + correctAnswer);
+    //make if statement to check if answer is wrong or right
+    if(1 === correctAnswer){
+        document.getElementById("AnswerResponse").innerHTML = "Correct! Good Job 😊";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+        // when answer is correct will increase users scores
+        score++;
+        document.getElementById("score").innerHTML = score;
+    } else {
+        time_remaining -=5;
+        // when user choose wrong answer minus 5 seconds
+        document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck next time!";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+    }
+    if (i >= questionArray.length -1){
+    end_quiz();
+    }else{
+        i++
+        setQuizQuestions();
+    }
+});
+answerC.addEventListener('click', function(event){
+    event.stopPropagation();
+    correctAnswer = questionsArrau[i].correctAnswer;
+    console.log("correctAnswer " + correctAnswer);
+    //make if statement to check if answer is wrong or right
+    if(2 === correctAnswer){
+        document.getElementById("AnswerResponse").innerHTML = "Correct! Good Job 😊";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+        // when answer is correct will increase users scores
+        score++;
+        document.getElementById("score").innerHTML = score;
+    } else {
+        time_remaining -=5;
+        // when user choose wrong answer minus 5 seconds
+        document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck next time!";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+    }
+    if (i >= questionArray.length -1){
+    end_quiz();
+    }else{
+        i++
+        setQuizQuestions();
+    }
+});
+answerD.addEventListener('click', function(event){
+    event.stopPropagation();
+    correctAnswer = questionsArrau[i].correctAnswer;
+    console.log("correctAnswer " + correctAnswer);
+    //make if statement to check if answer is wrong or right
+    if(3 === correctAnswer){
+        document.getElementById("AnswerResponse").innerHTML = "Correct! Good Job 😊";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+        // when answer is correct will increase users scores
+        score++;
+        document.getElementById("score").innerHTML = score;
+    } else {
+        time_remaining -=5;
+        // when user choose wrong answer minus 5 seconds
+        document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck next time!";
+        setTimeout(function() {
+            document.getElementById("AnswerResponse").innerHTML = "";
+        },
+        1000
+        );
+    }
+    if (i >= questionArray.length -1){
+    end_quiz();
+    }else{
+        i++
+        setQuizQuestions();
+    }
+});
 
 //when time reaches 0 screen shows game over
-
+    
 
 
 
