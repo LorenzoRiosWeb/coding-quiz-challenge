@@ -220,8 +220,8 @@ answerD.addEventListener('click', function(event) {
              view_high_scores();
             }
 
-        // localStorage.setItem("score",JSON.stringify(AnswerResponse));
-        // localStorage.setItem("initials", JSON.stringify(initials));
+        localStorage.setItem("score",JSON.stringify(AnswerResponse));
+        localStorage.setItem("initials", JSON.stringify(initials));
         
         function view_high_scores(){
         
@@ -248,7 +248,7 @@ answerD.addEventListener('click', function(event) {
         // clear the highscore
         function clear_hs(){
             high_scores = [];
-            // high_scores.splice(0, high_scores.length);
+            high_scores.splice(0, high_scores.length);
           }
         
         // refresh the site 
