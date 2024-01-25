@@ -44,8 +44,16 @@ function setCountdownTimer() {
     document.getElementById("timer").innerHTML = time;
 }
 
+function setQuizQuestions() {
+    questionHeading.textContent = questionsArray[i].question;
+    answerA.textContent = questionsArray[i].answerChoice[0]; 
+    answerB.textContent = questionsArray[i].answerChoice[1]; 
+    answerC.textContent = questionsArray[i].answerChoice[2]; 
+    answerD.textContent = questionsArray[i].answerChoice[3]; 
+    };
+
 // create function for answers var
-var questionArray = [{
+var questionsArray = [{
     question:"Question: Arrays in JavaScript can be used to store?",
     answerChoice: ["A) numbers and strings", "B) Other Arrays", "C) Booleans", "D) All of the Above"],
     correctAnswer :3
@@ -71,7 +79,7 @@ var questionArray = [{
 //create function for inccorect answer time is subtracted
 answerA.addEventListener('click', function(event){
     event.stopPropagation();
-    correctAnswer = questionsArrau[i].correctAnswer;
+    correctAnswer = questionsArray[i].correctAnswer;
     console.log("correctAnswer " + correctAnswer);
     //make if statement to check if answer is wrong or right
     if(0 === correctAnswer){
@@ -94,7 +102,7 @@ answerA.addEventListener('click', function(event){
         1000
         );
     }
-    if (i >= questionArray.length -1){
+    if (i >= questionsArray.length -1){
     end_quiz();
     }else{
         i++
@@ -103,7 +111,7 @@ answerA.addEventListener('click', function(event){
 });
 answerB.addEventListener('click', function(event){
     event.stopPropagation();
-    correctAnswer = questionsArrau[i].correctAnswer;
+    correctAnswer = questionsArray[i].correctAnswer;
     console.log("correctAnswer " + correctAnswer);
     //make if statement to check if answer is wrong or right
     if(1 === correctAnswer){
@@ -126,7 +134,7 @@ answerB.addEventListener('click', function(event){
         1000
         );
     }
-    if (i >= questionArray.length -1){
+    if (i >= questionsArray.length -1){
     end_quiz();
     }else{
         i++
@@ -135,7 +143,7 @@ answerB.addEventListener('click', function(event){
 });
 answerC.addEventListener('click', function(event){
     event.stopPropagation();
-    correctAnswer = questionsArrau[i].correctAnswer;
+    correctAnswer = questionsArray[i].correctAnswer;
     console.log("correctAnswer " + correctAnswer);
     //make if statement to check if answer is wrong or right
     if(2 === correctAnswer){
@@ -158,7 +166,7 @@ answerC.addEventListener('click', function(event){
         1000
         );
     }
-    if (i >= questionArray.length -1){
+    if (i >= questionsArray.length -1){
     end_quiz();
     }else{
         i++
@@ -167,7 +175,7 @@ answerC.addEventListener('click', function(event){
 });
 answerD.addEventListener('click', function(event){
     event.stopPropagation();
-    correctAnswer = questionsArrau[i].correctAnswer;
+    correctAnswer = questionsArray[i].correctAnswer;
     console.log("correctAnswer " + correctAnswer);
     //make if statement to check if answer is wrong or right
     if(3 === correctAnswer){
@@ -190,7 +198,7 @@ answerD.addEventListener('click', function(event){
         1000
         );
     }
-    if (i >= questionArray.length -1){
+    if (i >= questionsArray.length -1){
     end_quiz();
     }else{
         i++
@@ -213,18 +221,38 @@ answerD.addEventListener('click', function(event){
         high_scores.push(document.getElementById(" ").value + " " + score);
         view_high_scores();
     }
-
+// create local storage for highscores
     localStorage.setItem("score", JSON.stringify(AnswerResponse));
     localStorage.setItem("initials", JSON.stringify(initials));
 
+    function view_high_scores(){
+        document.getElementById("quizContainer").style.display = "none";
+        document.getElementById("game_over").style.display = "none";
+        document.getElementById("high_scores_page").style.display = "block";
+
+        output="";
+        for(let j=0; j<high_scores.lengthl; j++){
+            output = output + " " + high_scores[j];
+        }
+        document.getElementById("high_scores").innerHTML= output
+        clear_up();
+    }
+
+    function go_home(){
+        document.getElementById("high_scores_page").style.display = "none";
+        document.getElementById("homeContainer").style.display = "block";
+        clear_up();
+    }
     
-
-
-
-
-
-
-
-
-
-//creat local storage for highscore
+    function clear_hs(){
+        high_scores = [];
+        high_scores.splice(0, high_scores.length);
+    }
+    
+    function clear_up(){
+        time=75;
+        time_remaining=true;
+        time_start=false;
+        i=0;
+        score=0;
+    }
