@@ -86,7 +86,7 @@ answerA.addEventListener('click', function(event) {
         // check answer
         if (0 === correctAnswer) { 
             // display message to user for 1  second stating if the answer is correct or incorrect
-            document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+            document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it 😊!";
             setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
@@ -97,7 +97,7 @@ answerA.addEventListener('click', function(event) {
             // display updated score progress
             document.getElementById("score").innerHTML = score;
         } else {
-            time_remaining -= 5;
+            time_remaining - 5;
             // when user answers a question inccorrectly, subtract from the time
             document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
             setTimeout(function() {
@@ -119,7 +119,7 @@ answerB.addEventListener('click', function(event) {
     correctAnswer = questionsArray[i].correctAnswer;
     console.log(correctAnswer);
         if (1 === correctAnswer) { 
-            document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+            document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it 😊!";
             setTimeout(function() {
                 document.getElementById("AnswerResponse").innerHTML = "";
                     },
@@ -128,7 +128,7 @@ answerB.addEventListener('click', function(event) {
             score++;
             document.getElementById("score").innerHTML = score;
         } else {
-            time_remaining -= 5;
+            time_remaining - 5;
             document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
             setTimeout(function() {
                 document.getElementById("AnswerResponse").innerHTML = "";
@@ -149,7 +149,7 @@ answerC.addEventListener('click', function(event) {
     correctAnswer = questionsArray[i].correctAnswer;
     console.log(correctAnswer);
     if (2 === correctAnswer) { 
-        document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+        document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it 😊!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
@@ -158,7 +158,7 @@ answerC.addEventListener('click', function(event) {
         score++;
         document.getElementById("score").innerHTML = score;
     } else {
-        time_remaining -= 5;
+        time_remaining - 5;
         document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
@@ -179,7 +179,7 @@ answerD.addEventListener('click', function(event) {
     correctAnswer= questionsArray[i].correctAnswer.value;
     console.log(correctAnswer);
     if (3 === correctAnswer) { 
-        document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it!";
+        document.getElementById("AnswerResponse").innerHTML = "Correct! Nailed it 😊!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
                 },
@@ -188,7 +188,7 @@ answerD.addEventListener('click', function(event) {
         score++;
         document.getElementById("score").innerHTML = score;
     } else {
-        time_remaining -= 5;
+        time_remaining - 5;
         document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
