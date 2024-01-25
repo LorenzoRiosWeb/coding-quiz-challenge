@@ -11,7 +11,7 @@ var answerA = document.getElementById("answerA");
 var answerB = document.getElementById("answerB");
 var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
-var answerResponser = document.getElementById("AnswerResponse");
+var answerResponse = document.getElementById("AnswerResponse");
 var high_scores =[];
 var output="";
 // set a score of =0 at start of game
@@ -45,7 +45,28 @@ function setCountdownTimer(){
 }
 
 // create function for answers var
-
+var questionArray = [{
+    question:"Question: Arrays in JavaScript can be used to store?",
+    answerChoice: ["A) numbers and strings", "B) Other Arrays", "C) Booleans", "D) All of the Above"],
+    correctAnswer :3
+},{
+    question:"Question: Which HTML tag below can you use to write JavaScript",
+    answerChoice: ["A) <javascript>", "B) <script>", "C) <scripted", "D) <js>"],
+    correctAnswer:1
+},{
+    question:"Question: Commonly used data-types for Javascript Do not include",
+    answerChoice: ["A) Alerts", "B) Booleans", "C) Numbers", "D) Strings"],
+    correctAnswer:0
+}, {
+    question:"Question: The condition used in an if/else statement is enclosed with ",
+    answerChoice: ["A) Curly Brackets{} ", "B) Square Brackets [] ", "C) Parenthasies() ", "D) None of the Above "],
+    correctAnswer:2
+},{
+    question:"Question: Which very useful tool is used during the development and debugging for printing content to teh debugger is ",
+    answerChoice: ["A) console.log", "B) terminal/bash", "C) JavaScript", "D) for loops"],
+    correctAnswer:0
+}
+]
 
 
 
