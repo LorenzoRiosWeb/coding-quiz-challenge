@@ -97,7 +97,7 @@ answerA.addEventListener('click', function(event) {
             // display updated score progress
             document.getElementById("score").innerHTML = score;
         } else {
-            time_remaining - 5;
+            time -= 5;
             // when user answers a question inccorrectly, subtract from the time
             document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
             setTimeout(function() {
@@ -128,7 +128,7 @@ answerB.addEventListener('click', function(event) {
             score++;
             document.getElementById("score").innerHTML = score;
         } else {
-            time_remaining - 5;
+            time -= 5;
             document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
             setTimeout(function() {
                 document.getElementById("AnswerResponse").innerHTML = "";
@@ -158,7 +158,7 @@ answerC.addEventListener('click', function(event) {
         score++;
         document.getElementById("score").innerHTML = score;
     } else {
-        time_remaining - 5;
+        time -= 5;
         document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
@@ -188,7 +188,7 @@ answerD.addEventListener('click', function(event) {
         score++;
         document.getElementById("score").innerHTML = score;
     } else {
-        time_remaining - 5;
+        time -= 5;
         document.getElementById("AnswerResponse").innerHTML = "Incorrect! Better luck in the next one!";
         setTimeout(function() {
             document.getElementById("AnswerResponse").innerHTML = "";
